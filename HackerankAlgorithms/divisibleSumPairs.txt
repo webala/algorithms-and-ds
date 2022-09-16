@@ -1,0 +1,18 @@
+Given an array of integers and a positive integer k, determine the number of (i, j) pairs where i<j and ar[i] + ar[j] is divisible by k. 
+
+
+
+
+def divisibleSumPairs(n, k, ar):
+    # Write your code here
+    
+    
+    pairs = 0
+    for i in range(0, len(ar)):
+        num = ar[i]
+        sub_arr = ar[(i+1):]
+        for no in sub_arr:
+            if (no + num) % k == 0:
+                pairs += 1
+                
+    return pairs

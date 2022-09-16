@@ -1,0 +1,29 @@
+Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids
+
+def migratoryBirds(arr):
+    # Write your code here
+    types = { 
+        '1': 0,
+        '2': 0,
+        '3': 0,
+        '4': 0,
+        '5': 0
+    } 
+    
+    for s in arr:
+        if s == 1:
+            types['1'] += 1
+        elif s == 2:
+            types['2'] += 1
+        elif s == 3:
+            types['3'] += 1
+        elif s == 4:
+            types['4'] += 1
+        elif s == 5:
+            types['5'] += 1
+    
+    highest_sighting = max(types.values())
+    most_sighted = [key for key, value in types.items() if value == highest_sighting]
+    min_type = min(most_sighted)
+    
+    return int(min_type)
