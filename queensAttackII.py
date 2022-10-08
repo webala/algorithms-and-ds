@@ -26,7 +26,7 @@ def relativeLocation(queenX, queenY, pawnX, pawnY):
     if pawnY > queenY and pawnX == queenX:
         return 'U'
     if pawnY < queenY and pawnX == queenX:
-        return 'U'
+        return 'D'
     if abs(queenX - pawnX) == abs(queenY - pawnY):
         if pawnY > queenY and pawnX < queenX:
             return 'UL'
